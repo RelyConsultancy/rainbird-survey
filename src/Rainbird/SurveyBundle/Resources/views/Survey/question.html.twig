@@ -1,0 +1,9 @@
+<h1>Question</h1>
+<form id="data">
+    <p><input type="hidden" name="subject" value="{{ data.subject }}" /></p>
+    <p><input type="hidden" name="relationship" value="{{ data.relationship }}" /></p>
+    <p>{{ data.prompt }}</p>
+    {% for concept in data.concepts %}
+        <p><input type="radio" name="object" value="{{ concept.value }}" /> {{ concept.value }}</p>
+    {% endfor %}
+</form>
