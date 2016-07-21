@@ -1,12 +1,30 @@
-<script src="{{ asset('js/jquery.min.js') }}"></script>
-<script src="{{ asset('js/script.js') }}"></script>
+<html>
 
-<div id="container">
-    <div id="data_container">
+<head>
+    <title>Rainbird Survey</title>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/jquery.fullPage.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}" />
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/script.js') }}"></script>
+    <script src="{{ asset('js/jquery.fullPage.min.js') }}"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
+</head>
+
+<body>
+
+<div id="fullpage">
+
+    <div class="section splash-screen">
+        <h1>Welcome</h1>
+        <img class="logo" src="{{ asset('images/logo-rainbird.png') }}">
+        <h2>Could your business benefit from Artificial Intelligence?</h2>
+        <p>Consult our online tool powered by Artificial Intelligence to assess your needs.</p>
         <form id="data">
-            <input type="text" name="name" />
+            <input type="text" name="name" placeholder="enter your name">
         </form>
+        <button type="button" class="start">Let's go!</button>
     </div>
-    <button id="continue">Continue</button>
+
 </div>
 
+</html>
