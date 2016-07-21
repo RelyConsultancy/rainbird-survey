@@ -1,0 +1,10 @@
+<div class="section test2-screen">
+    <h1>New question - the third!</h1>
+    <p>Lorem ipsum dolsdgds gddg sdgs sdgdsgor sit amet...</p>
+    {% for response in data %}
+        <div>
+            <p>Answer: {{ response.object }}</p>
+            <p>Certainty: {{ response.certainty }}</p>
+        </div>
+    {% endfor %}
+</div>
