@@ -2,6 +2,7 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
+    - { resource: "@SurveyBundle/Resources/config/services.yml" }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
@@ -65,4 +66,18 @@ swiftmailer:
     host:      "%mailer_host%"
     username:  "%mailer_user%"
     password:  "%mailer_password%"
+    port:      "%mailer_port%"
     spool:     { type: memory }
+
+guzzle:
+    clients:
+        api_start:
+            base_url: "https://enterprise-api.rainbird.ai/start/"
+            headers:
+                Accept: "aplication/json"
+                Content-Type: "application/json"
+                Authorization: "Basic ODRiYjY3NmItN2JhNS00YmY4LThmZDItYzQ0YWQ0YTYxMTU4Og=="
+        api:
+            base_url: "https://enterprise-api.rainbird.ai"
+            headers:
+                Content-Type: "application/json"

@@ -1,0 +1,7 @@
+connection_homepage:
+    path:     /
+    defaults: { _controller: SurveyBundle:Survey:index }
+
+connection_cata:
+    path:     /process
+    defaults: { _controller: SurveyBundle:Survey:process }

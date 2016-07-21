@@ -1,0 +1,7 @@
+<h1>Result</h1>
+{% for response in data %}
+    <div>
+        <p>Answer: {{ response.object }}</p>
+        <p>Certainty: {{ response.certainty }}</p>
+    </div>
+{% endfor %}

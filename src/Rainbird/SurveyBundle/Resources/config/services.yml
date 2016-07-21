@@ -1,0 +1,12 @@
+imports:
+    - { resource: api_connection.yml }
+
+parameters:
+    request_body_formation.class: Rainbird\SurveyBundle\Services\RequestBodyFormation
+    email_subject: 'Could your business benefit from Artificial Intelligence?'
+    email_from: 'engage@rainbird.ai'
+    email_bcc: 'catalin.covaciu@gmail.com'
+
+services:
+    request_body_formation:
+        class: '%request_body_formation.class%'
