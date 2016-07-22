@@ -26,6 +26,40 @@ h2 {
 }
 
 
+
+/* HEADER ======================================= */
+
+header {
+    position: fixed;
+    top: -110px;
+    height: 110px;
+    width: 100%;
+    text-align: center;
+    background-image: url('../images/splash-header.jpg');
+    background-position: center;
+    z-index: 2;
+    transition: top 0.5s ease;
+}
+
+header.visible {
+    top: 0;
+}
+
+header img {
+    vertical-align: middle;
+}
+
+header .logo-rainbird {
+    height: 110px;
+}
+
+header .logo-matter {
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+
+
 /* SPLASH SCREEN ================================ */
 
 .splash-screen {

@@ -2,7 +2,15 @@ $(document).ready(function() {
     var $slider = $('#fullpage');
     var slides = [];
 
-    $slider.fullpage();
+    function init() {
+        $slider.fullpage({
+            onLeave: function(index, nextIndex, direction) {
+                $('header').toggleClass('visible', nextIndex !== 1);
+            }
+        });
+    }
+
+    init();
 
     function loadNextScreen() {
         getSlide(slides, function() {
@@ -14,7 +22,7 @@ $(document).ready(function() {
             // destroy and re-init plugin
             // move to last index
             $.fn.fullpage.destroy('all');
-            $slider.fullpage();
+            init();
             $.fn.fullpage.silentMoveTo(active + 1);
             $.fn.fullpage.moveSectionDown();
         });
