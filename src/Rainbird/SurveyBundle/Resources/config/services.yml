@@ -4,8 +4,8 @@ imports:
 parameters:
     request_body_formation.class: Rainbird\SurveyBundle\Services\RequestBodyFormation
     email_subject: 'Could your business benefit from Artificial Intelligence?'
-    email_from: 'Readyforai@rainbird.ai '
-    email_bcc: 'catalin.covaciu@gmail.com'
+    email_from: 'Readyforai@rainbird.ai'
+    email_bcc: 'Readyforai@rainbird.ai'
 
 services:
     request_body_formation:
