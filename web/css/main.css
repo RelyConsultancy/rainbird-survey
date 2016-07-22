@@ -62,7 +62,8 @@ header .logo-matter {
 
 /* SPLASH SCREEN ================================ */
 
-.splash-screen {
+.splash-screen,
+.email-screen {
     background-image: url('../images/splash-screen.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -87,12 +88,14 @@ header .logo-matter {
     color: #fff;
 }
 
-.splash-screen form {
+.splash-screen form,
+.email-screen form {
     margin: 0;
     padding: 0;
 }
 
-.splash-screen input {
+.splash-screen input,
+.email-screen input {
     display: block;
     margin: 3rem auto 0;
     width: 230px;
@@ -109,13 +112,19 @@ header .logo-matter {
     transition: background-color 0.5s ease;
 }
 
-.splash-screen input:focus {
+.email-screen input {
+    width: 400px;
+}
+
+.splash-screen input:focus,
+.email-screen input:focus {
     background-color: rgba(28,45,68,1);
     box-shadow: 0 0 8px #2793C7;
     color: #fff;
 }
 
-.splash-screen button {
+.splash-screen button,
+.email-screen button {
     margin: 3rem 0 0;
     padding: 5px 40px;
     font-family: 'adam.cg_proregular';
@@ -128,7 +137,8 @@ header .logo-matter {
     transition: background-color 0.5s ease;
 }
 
-.splash-screen button:hover {
+.splash-screen button:hover,
+.email-screen button:hover {
     background-color: #3e5163;
     color: #fff;
     border-color: #adcfe6;
