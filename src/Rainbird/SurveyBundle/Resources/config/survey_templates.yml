@@ -1,20 +1,22 @@
 parameters:
     question_templates:
         bot_screen:
-            template: bot_screen.html.twig
+            template: question.html.twig
             next: online_chat
+            info:
+                title: AI is here to help you, ask something!
+                content:
+                    - The simplest user experience is an inteligent and intuitive ‘bot’ available via a messenger interface.
+                action: select a message
+                action_css_class: left
+            css_class: bot-screen
         online_chat:
-            next: option3
-            template: online_chat.html.twig
-        option3:
-            template: option3.html.twig
-            next: option4
-        option4:
-            template: option4.html.twig
-            next: option5
-        option5:
-            template: option5.html.twig
-            next: option6
-        option6:
-            template: option6.html.twig
+            template: question.html.twig
             next: bot_screen
+            info:
+                title: Try AI web assistance!
+                content:
+                    - The use of AI reduces human error and provides amazing customer experience to resolve simple customer problems or queries
+                action: select a message
+                action_css_class: right
+            css_class: web-chat-screen
