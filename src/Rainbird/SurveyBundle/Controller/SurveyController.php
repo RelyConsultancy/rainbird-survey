@@ -59,7 +59,13 @@ class SurveyController extends Controller
         $questionTemplates = $this->getParameter('question_templates');
         $session = $this->get('session');
         $session->set('current_template', $questionTemplates[$option['next']]);
-        return $this->render('SurveyBundle:Survey/Questions:' . $option['template'], array('data' => $data));
+        return $this->render(
+            'SurveyBundle:Survey/Questions:' . $option['template'],
+            array(
+                'data' => $data,
+                'option' => $option
+            )
+        );
     }
 
     /**
