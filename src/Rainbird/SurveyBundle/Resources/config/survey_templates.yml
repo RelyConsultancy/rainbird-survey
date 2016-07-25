@@ -1,0 +1,20 @@
+parameters:
+    question_templates:
+        bot_screen:
+            template: bot_screen.html.twig
+            next: online_chat
+        online_chat:
+            next: option3
+            template: online_chat.html.twig
+        option3:
+            template: option3.html.twig
+            next: option4
+        option4:
+            template: option4.html.twig
+            next: option5
+        option5:
+            template: option5.html.twig
+            next: option6
+        option6:
+            template: option6.html.twig
+            next: bot_screen

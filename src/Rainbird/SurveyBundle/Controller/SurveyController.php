@@ -30,12 +30,15 @@ class SurveyController extends Controller
             $responseStart = $clientStart->get($this->getParameter('start_id'));
             // Decode the result
             $responseStartArray = json_decode((string) $responseStart->getBody(), true);
+            $session = $this->get('session');
             // If the decoding is successful and the code was returned, add the id to the session, so it can be
             // used for further calls
             if ($responseStartArray['id']) {
-                $session = $this->get('session');
                 $session->set('conversation_token', $responseStartArray['id']);
             }
+
+            $questionTemplates = $this->getParameter('question_templates');
+            $session->set('current_template', $questionTemplates['bot_screen']);
 
             return $this->render('SurveyBundle:Survey:index.html.twig');
         } catch (\Exception $e) {
@@ -47,12 +50,16 @@ class SurveyController extends Controller
      * Returns the question html to be rendered
      *
      * @param $data
+     * @param $option
      *
      * @return Response
      */
-    public function questionAction($data)
+    public function questionAction($data, $option)
     {
-        return $this->render('SurveyBundle:Survey:question.html.twig', array('data' => $data));
+        $questionTemplates = $this->getParameter('question_templates');
+        $session = $this->get('session');
+        $session->set('current_template', $questionTemplates[$option['next']]);
+        return $this->render('SurveyBundle:Survey/Questions:' . $option['template'], array('data' => $data));
     }
 
     /**
@@ -121,7 +128,13 @@ class SurveyController extends Controller
 
             // Based on the response type, the rendered content is being selected
             if (isset($responseArray['question']) && $responseArray['question']) {
-                $template = $this->forward('SurveyBundle:Survey:question', array('data' => $responseArray['question']))->getContent();
+                $template = $this->forward(
+                    'SurveyBundle:Survey:question',
+                    array(
+                        'data' => $responseArray['question'],
+                        'option' => $session->get('current_template')
+                    )
+                )->getContent();
             } else {
                 if (isset($responseArray['result']) && $responseArray['result']) {
                     $session->set('result', $responseArray['result']);
