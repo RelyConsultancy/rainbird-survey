@@ -1,5 +1,6 @@
 imports:
     - { resource: api_connection.yml }
+    - { resource: survey_templates.yml }
 
 parameters:
     request_body_formation.class: Rainbird\SurveyBundle\Services\RequestBodyFormation

@@ -33,6 +33,7 @@ p {
 .section-wrapper {
     max-width: 700px;
     margin: 0 auto;
+    overflow: hidden;
 }
 
 .call-to-action {
@@ -178,7 +179,12 @@ header .logo-matter {
 
 
 /* BOT SCREEN =================================== */
-.bot-screen {
+.bot-screen,
+.online-chat,
+.option3,
+.option4,
+.option5,
+.option6 {
     background-image: url('../images/bg-screen-1.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -198,9 +204,23 @@ header .logo-matter {
 
 
 @media (min-width: 728px) {
+    .info {
+        float: right;
+        width: 460px;
+    }
+
     .bot-screen .info {
         float: right;
         width: 460px;
+    }
+
+    .survey {
+        float: left;
+        width: 160px;
+        height: 328px;
+        padding: 80px 40px 0 40px;
+        background-image: url('../images/phone.png');
+        background-repeat: no-repeat;
     }
 
     .bot-screen .survey {
@@ -212,8 +232,19 @@ header .logo-matter {
         background-repeat: no-repeat;
     }
 
+    .survey h3 {
+        font-size: .6875rem;
+    }
+
     .bot-screen .survey h3 {
         font-size: .6875rem;
+    }
+
+    .choices {
+        font-size: .6875rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
     }
 
     .bot-screen .choices {
@@ -221,5 +252,9 @@ header .logo-matter {
         margin: 0;
         padding: 0;
         list-style: none;
+    }
+
+    .choices li {
+        padding-bottom: 5px;
     }
 }
