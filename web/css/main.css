@@ -449,4 +449,38 @@ header .logo-matter {
         background-color: #bca;
         border-radius: 5px 5px 5px 0;
     }
+
+    /* LAPTOP SCREEN */
+    .laptop-screen .section-wrapper {
+        max-width: 980px;
+        min-height: 381px;
+        background-image: url('../images/laptop.png');
+        background-repeat: no-repeat;
+    }
+
+    .laptop-screen .info {
+        float: right;
+        width: 470px;
+    }
+
+    .laptop-screen .info h2 {
+        color: #16273e;
+        border-bottom: 1px solid #c9c9c9;
+        padding: 20px 0 10px 40px;
+        margin-bottom: 10px;
+    }
+
+    .laptop-screen .info p {
+        margin-left: 40px;
+    }
+
+    .laptop-screen .survey {
+        float: left;
+        width: 270px;
+        height: 158px;
+        margin: 100px 0 0 200px;
+        padding: 10px;
+        background: #fff;
+        border: 1px solid #ccc;
+    }
 }

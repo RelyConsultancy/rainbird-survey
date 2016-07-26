@@ -12,7 +12,7 @@ parameters:
             css_class: bot-screen
         online_chat:
             template: question.html.twig
-            next: bot_screen
+            next: laptop
             info:
                 title: Try AI web assistance!
                 content:
@@ -20,3 +20,13 @@ parameters:
                 action: select a message
                 action_css_class: right
             css_class: web-chat-screen
+        laptop:
+            template: question.html.twig
+            next: bot_screen
+            info:
+                title: AI is here to help you, ask something!
+                content:
+                    - The simplest user experience is an inteligent and intuitive 'bot' available via a mesenger interface.
+                action: select a message
+                action_css_class: left
+            css_class: laptop-screen
