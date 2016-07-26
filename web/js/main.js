@@ -46,4 +46,11 @@ $(document).ready(function() {
         evt.preventDefault();
         loadNextScreen();
     });
+
+    $('body').on('change', '.option', function() {
+        $('.option').each(function() {
+            $(this).closest('li').removeClass('answer');
+        });
+        $(this).closest('li').addClass('answer');
+    });
 });
