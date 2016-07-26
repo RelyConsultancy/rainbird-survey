@@ -364,7 +364,7 @@ header .logo-matter {
     .bot-screen .survey h3 {
         font-size: .6875rem;
         background-color:  #ccc;
-        border-radius: 5px 0 5px 5px;
+        border-radius: 5px 5px 0 5px;
         padding: 5px 5px;
         margin-left: 10px;
     }
@@ -418,7 +418,7 @@ header .logo-matter {
     .web-chat-screen .survey h3 {
         background: #ccc url('../images/icon-web-chat-question.png') no-repeat 5px center;
         background-size: 20px 20px;
-        border-radius: 5px 0 5px 5px;
+        border-radius: 5px 5px 0 5px;
         padding: 10px 10px 10px 30px;
         margin-left: 30px;
         line-height: 20px;
@@ -446,7 +446,7 @@ header .logo-matter {
 
     .bot-screen .choices li.answer,
     .web-chat-screen .choices li.answer {
-        background-color: #10a54a;
-        border-radius: 0 5px 5px 5px;
+        background-color: #bca;
+        border-radius: 5px 5px 5px 0;
     }
 }
