@@ -75,6 +75,10 @@ button {
     cursor: pointer;
 }
 
+button:disabled {
+    background-color: #D3D3D3;
+}
+
 
 
 /* HEADER ======================================= */
@@ -301,6 +305,11 @@ header .logo-matter {
 .results {
     max-height: 200px;
     overflow: auto;
+}
+
+.splash-screen .invalid,
+.email-screen .invalid {
+    background-color: #FF8282;
 }
 
 
