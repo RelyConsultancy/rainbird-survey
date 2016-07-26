@@ -5,7 +5,9 @@ $(document).ready(function() {
     function init() {
         $slider.fullpage({
             onLeave: function(index, nextIndex, direction) {
-                $('header').toggleClass('visible', nextIndex !== 1);
+                var $screen = $('.section:eq(' + (nextIndex - 1) + ')');
+                var is_results_screen = $screen.hasClass('results-screen');
+                $('header').toggleClass('visible', nextIndex !== 1 && !is_results_screen);
             }
         });
     }

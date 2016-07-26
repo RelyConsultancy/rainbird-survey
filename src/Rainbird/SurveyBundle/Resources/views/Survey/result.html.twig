@@ -1,10 +1,42 @@
-<div class="section test2-screen">
-    <h1>New question - the third!</h1>
-    <p>Lorem ipsum dolsdgds gddg sdgs sdgdsgor sit amet...</p>
-    {% for response in data %}
-        <div>
-            <p>Answer: {{ response.object }}</p>
-            <p>Certainty: {{ response.certainty }}</p>
+<div class="section results-screen">
+    <div class="section-wrapper">
+        <div class="info">
+            <div class="logos">
+                <img src="{{ asset('images/logo-rainbird.png') }}" class="logo-rainbird">
+                <img src="{{ asset('images/logo-matter.png') }}" class='logo-matter'>
+            </div>
+            <h2>Results:</h2>
+            <div class="results">
+                {% for response in data %}
+                    <p>{{ response.object }}</p>
+                {% endfor %}
+            </div>
         </div>
-    {% endfor %}
+        <div class="contact">
+            <p class="email">
+                <a href="mailto:Readyforai@rainbird.ai">Readyforai@rainbird.ai</a>
+            </p>
+        </div>
+        <div class="contact">
+            <p class="phone">
+                <a href="tel:+448006122666">0800 612 2666</a>
+            </p>
+
+        </div>
+        <div class="related">We think you'll also be interested in our case studies and white papers on AI, which you can check out below.</div>
+        <ul class="suggestions">
+            <li>
+                <img src="{{ asset('images/article1.jpg') }}">
+                <a href="http://rainbird.ai/content/uploads/2015/12/Rainbird-White-Paper-AL-in-Context_Digital.pdf" target="_blank">Artificial Intelligence in Context</a>
+            </li>
+            <li>
+                <img src="{{ asset('images/article2.jpg') }}">
+                <a href="http://rainbird.ai/content/uploads/2015/12/RainBird_WhitePaper_KnowledgeAutomation_Digital.pdf" target="_blank">The Automation of Knowledge Work</a>
+            </li>
+            <li>
+                <img src="{{ asset('images/article3.jpg') }}">
+                <a href="http://rainbird.ai/content/uploads/2016/02/AI-and-Customer-Service.pdf" target="_blank">AI and Customer Service</a>
+            </li>
+        </ul>
+    </div>
 </div>
