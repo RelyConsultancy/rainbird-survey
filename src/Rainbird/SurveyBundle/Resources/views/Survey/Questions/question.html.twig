@@ -15,12 +15,12 @@
             <form id="data">
                 <p><input type="hidden" name="subject" value="{{ data.subject }}" /></p>
                 <p><input type="hidden" name="relationship" value="{{ data.relationship }}" /></p>
-                <h3>{{ data.prompt }}</h3>
+                <h3 class="question">{{ data.prompt }}</h3>
                 <ul class="choices">
                     {% for concept in data.concepts %}
                         <li>
                             <label>
-                                <input type="radio" name="object" value="{{ concept.value }}" />
+                                <input class="option" type="radio" name="object" value="{{ concept.value }}" />
                                 {{ concept.value }}
                             </label>
                         </li>
