@@ -174,7 +174,7 @@ class SurveyController extends Controller
                 ->addBcc($this->getParameter('email_bcc'))
                 ->setBody(
                     $this->renderView(
-                        'SurveyBundle:Survey:result.html.twig',
+                        'SurveyBundle:Survey:result_email.html.twig',
                         array('data' => $result)
                     ),
                     'text/html'
