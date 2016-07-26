@@ -334,10 +334,6 @@ header .logo-matter {
         list-style: none;
     }
 
-    .choices li {
-        padding-bottom: 5px;
-    }
-
 
     /* BOT CHAT SCREEN */
 
@@ -367,6 +363,10 @@ header .logo-matter {
 
     .bot-screen .survey h3 {
         font-size: .6875rem;
+        background-color:  #ccc;
+        border-radius: 5px 0 5px 5px;
+        padding: 5px 5px;
+        margin-left: 10px;
     }
 
     .bot-screen .choices {
@@ -376,13 +376,19 @@ header .logo-matter {
         list-style: none;
     }
 
+    .bot-screen .choices li {
+        background-color: #dec;
+        padding: 5px 5px 5px 5px;
+        margin: 0 10px 3px 0;
+        border-radius: 5px;
+
+    }
+
     /* WEB CHAT SCREEN */
     .web-chat-screen .section-wrapper {
         max-width: 860px;
         min-height: 381px;
-        background-image: url('../images/tablet.png');
-        background-repeat: no-repeat;
-        background-position: top right;
+        background: url('../images/tablet.png') no-repeat top right;
     }
 
     .web-chat-screen .info {
@@ -410,10 +416,11 @@ header .logo-matter {
     }
 
     .web-chat-screen .survey h3 {
-        background-image: url('../images/icon-web-chat-question.png');
-        background-repeat: no-repeat;
+        background: #ccc url('../images/icon-web-chat-question.png') no-repeat 5px center;
         background-size: 20px 20px;
-        padding-left: 30px;
+        border-radius: 5px 0 5px 5px;
+        padding: 10px 10px 10px 30px;
+        margin-left: 30px;
         line-height: 20px;
     }
 
@@ -422,7 +429,24 @@ header .logo-matter {
     }
 
     .web-chat-screen .choices li {
-        border-top: 1px solid #c9c9c9;
-        padding: 8px 0;
+        background-color: #dec;
+        padding: 7px;
+        margin: 0 30px 5px 0;
+        border-radius: 5px;
+    }
+
+    .bot-screen .choices li input,
+    .web-chat-screen .choices li input {
+        margin: 0;
+        padding: 0;
+        opacity: 0;
+        display: none;
+        float: none;
+    }
+
+    .bot-screen .choices li.answer,
+    .web-chat-screen .choices li.answer {
+        background-color: #10a54a;
+        border-radius: 0 5px 5px 5px;
     }
 }
