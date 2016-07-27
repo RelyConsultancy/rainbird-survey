@@ -6,22 +6,17 @@
                 <img src="{{ asset('images/logo-matter.png') }}" class='logo-matter'>
             </div>
             <h2>Results:</h2>
-            <div class="results">
-                {% for response in data %}
-                    <p>{{ response.object }}</p>
-                {% endfor %}
-            </div>
+            {% for response in data %}
+                <p class='results'>{{ response.object }}</p>
+            {% endfor %}
         </div>
         <div class="contact">
             <p class="email">
                 <a href="mailto:Readyforai@rainbird.ai">Readyforai@rainbird.ai</a>
             </p>
-        </div>
-        <div class="contact">
             <p class="phone">
                 <a href="tel:+448006122666">0800 612 2666</a>
             </p>
-
         </div>
         <div class="related">We think you'll also be interested in our case studies and white papers on AI, which you can check out below.</div>
         <ul class="suggestions">
