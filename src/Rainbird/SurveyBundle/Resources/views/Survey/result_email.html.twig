@@ -1,9 +1,458 @@
-<div class="section test2-screen">
-    <h1>Result</h1>
-    <p>Lorem ipsum dolsdgds gddg sdgs sdgdsgor sit amet...</p>
-    {% for response in data %}
-        <div>
-            <p>Answer: {{ response.object }}</p>
-        </div>
-    {% endfor %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>A Responsive Email Template</title>
+    <!--
+    An email present from your friends at Litmus (@litmusapp)
+    Email is surprisingly hard. While this has been thoroughly tested, your mileage may vary.
+    It's highly recommended that you test using a service like Litmus (http://litmus.com) and your own devices.
+    Enjoy!
+    -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <style type="text/css">
+        /* CLIENT-SPECIFIC STYLES */
+        body, table, td, a {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        /* Prevent WebKit and Windows mobile changing default text sizes */
+        table, td {
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+
+        /* Remove spacing between tables in Outlook 2007 and up */
+        img {
+            -ms-interpolation-mode: bicubic;
+        }
+
+        /* Allow smoother rendering of resized image in Internet Explorer */
+        /* RESET STYLES */
+        img {
+            border: 0;
+            height: auto;
+            line-height: 100%;
+            outline: none;
+            text-decoration: none;
+        }
+
+        table {
+            border-collapse: collapse !important;
+        }
+
+        body {
+            height: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 100% !important;
+        }
+
+        /* iOS BLUE LINKS */
+        a[x-apple-data-detectors] {
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* MOBILE STYLES */
+        @media screen and (max-width: 640px) {
+            table[class="col"] {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+
+            table[class="col"] tr td {
+                text-align: center !important;
+                width: 100% !important;
+            }
+
+            /* ALLOWS FOR FLUID TABLES */
+            .wrapper {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+
+            .wrapper td {
+                /*display: block !important;*/
+                width: 100% !important;
+                text-align: center;
+            }
+
+            /* ADJUSTS LAYOUT OF LOGO IMAGE */
+            .logo img {
+                margin: 0 auto !important;
+            }
+
+            /* USE THESE CLASSES TO HIDE CONTENT ON MOBILE */
+            .mobile-hide {
+                display: none !important;
+            }
+
+            .img-max {
+                max-width: 100% !important;
+                width: 100% !important;
+                height: auto !important;
+            }
+
+            /* FULL-WIDTH TABLES */
+            .responsive-table {
+                width: 100% !important;
+            }
+
+            /* UTILITY CLASSES FOR ADJUSTING PADDING ON MOBILE */
+            .padding {
+                padding: 10px 5% 15px 5% !important;
+            }
+
+            .padding-meta {
+                padding: 30px 5% 0px 5% !important;
+                text-align: center !important;
+            }
+
+            .padding-copy {
+                padding: 10px 5% 10px 5% !important;
+                text-align: center !important;
+            }
+
+            .no-padding {
+                padding: 0 !important;
+            }
+
+            .column-footer {
+                width: 50% !important;
+            }
+
+            .last {
+                float: left !important;
+            }
+
+            /* ADJUST BUTTONS ON MOBILE */
+            .mobile-button-container {
+                margin: 0 auto;
+                width: 100% !important;
+            }
+
+            .mobile-button {
+                padding: 15px !important;
+                border: 0 !important;
+                font-size: 16px !important;
+                display: block !important;
+            }
+        }
+
+        /* ANDROID CENTER FIX */
+        div[style*="margin: 16px 0;"] {
+            margin: 0 !important;
+        }
+
+        /*td[class="td_mobile"] { display : block !important;}*/
+    </style>
+    <!--[if gte mso 12]>
+    <style type="text/css">
+        .mso-right {
+            padding-left: 20px;
+        }
+    </style>
+    <![endif]-->
+</head>
+<body style="margin: 0 !important; padding: 0 !important;">
+<!-- HIDDEN PREHEADER TEXT -->
+<div style="display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: Helvetica, Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
+    Entice the open with some amazing preheader text. Use a little mystery and get those subscribers to read through...
 </div>
+<!-- HEADER -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+        <td bgcolor="#ef0f4f" align="center">
+            <!--[if (gte mso 9)|(IE)]>
+            <table align="center" border="0" cellspacing="0" cellpadding="0" width="800">
+                <tr>
+                    <td align="center" valign="top" width="800">
+            <![endif]-->
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" style="max-width: 800px">
+                <tr>
+                    <td>
+                        <!--[if mso]>
+                        <table>
+                            <tr>
+                                <td width="49%"><![endif]-->
+
+                        <table border="0" cellpadding="0" cellspacing="0" height="60" width="300" valign="middle" style=" width: 300; max-width: 300px;" class="col" align="left">
+                            <tr>
+                                <td align="left" valign="middle" width="100%" height="90" class="logo">
+                                    <a href="http://rainbird.ai/" target="_blank">
+                                        <img alt="Logo" src="{{ app.request.uriForPath(asset('images/logo-rainbird.png')) }}" width="140" height="90"
+                                             style="display: inline-block; font-family: Arial, sans-serif; color: #ffffff; font-size: 16px;" border="0">
+                                    </a>
+                                    <a href="http://experiencematter.co.uk/" target="_blank">
+                                        <img alt="Logo" src="{{ app.request.uriForPath(asset('images/logo-matter.png')) }}" width="120" height="19"
+                                             style="display: inline-block; margin-left: 20px; margin-bottom: 20px;  font-family: Arial, sans-serif; color: #ffffff; font-size: 16px;" border="0">
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                        <!--[if mso]></td>
+                        <td width="49%" ;"><![endif]-->
+                        <table border="0" cellpadding="0" valign="middle" height="90" cellspacing="0" width="300" style=" width: 300; max-width: 300px;" class="col" align="right">
+                            <tr>
+                                <!-- [if mso]>
+                                <td style="padding-top: -50px;"> <![endif]-->
+                                <td align="right" valign="middle" width="100%" height="90" style="font-size: 14px; line-height: 90px; font-family: Arial, sans-serif;" class="links">
+                                    <a href="http://rainbird.ai/services/knowledge-modelling/" target="_blank" style="color: #ffffff; text-decoration: none; padding: 0 15px;">Services</a>
+                                    <a href="http://rainbird.ai/contact/" target="_blank" style="color: #ffffff; text-decoration: none; padding: 0 15px;">Contact us</a>
+                                </td>
+                                <!-- [if mso]></td> -->
+                            </tr>
+                        </table>
+                        <!--[if mso]></td></tr></table><![endif]-->
+                    </td>
+                </tr>
+            </table>
+            <!--[if (gte mso 9)|(IE)]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+        </td>
+    </tr>
+    <tr>
+        <td align="center" class="section-hero">
+            <!--[if (gte mso 9)|(IE)]>
+            <table align="center" border="0" cellspacing="0" cellpadding="0" width="800">
+                <tr>
+                    <td align="center" valign="top" width="800">
+            <![endif]-->
+            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 800px;" class="responsive-table section-hero">
+                <tr>
+                    <td background="https://www.marketsworld.com/images/hero.jpg" bgcolor="#d9d9d9" width="800" valign="top" valign="top"
+                        style="background:url(https://www.marketsworld.com/images/hero.jpg) no-repeat 0% 50% / cover; background-size: cover; background-position: 0% 50%; background-repeat: no-repeat;">
+                        <!--[if gte mso 9]>
+                        <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:800px;height:327px;">
+                            <v:fill type="tile" src="https://www.marketsworld.com/images/hero.jpg" color="#d9d9d9"/>
+                            <v:textbox inset="0,0,0,0">
+                        <![endif]-->
+                        <div>
+                            <!-- HERO IMAGE -->
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td>
+                                        <!-- COPY -->
+                                        <table width="100%" height="240" border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td align="left" valign="bottom" style="font-size: 30px; font-family: Arial, sans-serif; color: #ffffff; padding: 15px 25px;" class="padding-copy">Could
+                                                    your business benefit from Artificial Intelligence?<br>YES!
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!--[if gte mso 9]>
+                        </v:textbox>
+                        </v:rect>
+                        <![endif]-->
+                    </td>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td bgcolor="#ffffff" align="center" style="padding: 15px;" class="section-padding">
+            <!--[if (gte mso 9)|(IE)]>
+            <table align="center" border="0" cellspacing="0" cellpadding="0" width="600">
+                <tr>
+                    <td align="center" valign="top" width="600">
+            <![endif]-->
+            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 800px;" class="responsive-table">
+                <tr>
+                    <td>
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td>
+                                    <!-- COPY -->
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <td align="left" style="padding: 20px 0 0 0; font-size: 16px; line-height: 25px; font-family: Helvetica, Arial, sans-serif; color: #333333;"
+                                                class="padding-copy">RESULTS:
+                                            </td>
+                                        </tr>
+                                        {% for response in data %}
+                                            <tr>
+                                                <td align="left" style="padding: 20px 0 0 0; font-size: 16px; line-height: 25px; font-family: Helvetica, Arial, sans-serif; color: #333333;"
+                                                    class="padding-copy">{{ response.object }}</td>
+                                            </tr>
+                                        {% endfor %}
+                                        <tr>
+                                            <td align="left" style="padding: 20px 0 0 0; font-size: 16px; line-height: 25px; font-family: Helvetica, Arial, sans-serif; color: #333333;"
+                                                class="padding-copy">
+                                                <ul>
+                                                    <li><a href="http://rainbird.ai/is-digital-transformation-industry-4-0-and-artificial-intelligence-the-same-picture-taken-by-different-people/">Is
+                                                            Digital Transformation, Industry 4.0 and Artificial Intelligence the Same Picture Taken by Different People?</a></li>
+                                                    <li><a href="http://rainbird.ai/the-benefits-of-ai-for-business/">The Benefits of AI for Business</a></li>
+                                                    <li><a href="http://rainbird.ai/is-ai-just-about-efficiency-and-job-cuts/">Is AI just about Efficiency and Job Cuts?</a></li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <!--[if (gte mso 9)|(IE)]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+        </td>
+    </tr>
+    <tr>
+        <td bgcolor="#662d91" align="left" style="padding: 20px;">
+            <!--[if (gte mso 9)|(IE)]>
+            <table align="center" border="0" cellspacing="0" cellpadding="0" width="600">
+                <tr>
+                    <td align="center" valign="top" width="600">
+            <![endif]-->
+            <!-- UNSUBSCRIBE COPY -->
+            <table cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 800px; line-height: 18px;" align="center" class="responsive-table">
+                <tr>
+                    <td valign="top" class="mobile-wrapper">
+                        <!-- LEFT COLUMN -->
+                        <table cellpadding="0" cellspacing="0" border="0" width="25%" style="width: 25%;" align="left" class="column-footer">
+                            <tr>
+                                <td style="padding: 0 0 10px 0;">
+                                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                        <tr>
+                                            <td align="left" style="font-family: Arial, sans-serif; color: #ffffff; font-size: 18px; padding-bottom: 20px;">Main links</td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left" style="font-family: Arial, sans-serif; color: #ffffff; font-size: 14px;"><a
+                                                        href="http://rainbird.ai/use-cases/transforming-customer-contact/" target="_blank" style="color: #ffffff; text-decoration: none;">Use cases</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left" style="font-family: Arial, sans-serif; color: #ffffff; font-size: 14px;"><a href="http://rainbird.ai/the-platform/overview/"
+                                                                                                                                         target="_blank" style="color: #ffffff; text-decoration: none;">The
+                                                    platform</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left" style="font-family: Arial, sans-serif; color: #ffffff; font-size: 14px;"><a href="http://rainbird.ai/services/knowledge-modelling/"
+                                                                                                                                         target="_blank" style="color: #ffffff; text-decoration: none;">Services</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left" style="font-family: Arial, sans-serif; color: #ffffff; font-size: 14px;"><a href="http://rainbird.ai/contact/" target="_blank"
+                                                                                                                                         style="color: #ffffff; text-decoration: none;">Contact</a></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- MIDDLE COLUMN -->
+                        <table cellpadding="0" cellspacing="0" border="0" width="38%" style="width: 38%;" align="left" class="column-footer">
+                            <tr>
+                                <td style="padding: 0 0 10px 0;">
+                                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                        <tr>
+                                            <td align="left" style="font-family: Arial, sans-serif; color: #ffffff; font-size: 18px; padding-bottom: 20px;">Contact us</td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left" style="font-family: Arial, sans-serif; color: #ffffff; font-size: 16px; padding-bottom: 10px">
+                                                <a href="mailto:engage@rainbird.ai" target="_blank" style="color:#ffffff; text-decoration: none; font-size: 14px;">
+                                                    <b>Email:</b> engage@rainbird.ai
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left" style="font-family: Arial, sans-serif; color: #ffffff; font-size: 16px; line-height: 16px;padding-bottom: 10px">
+                                                <a href="tel:+44 (0) 1624 675662" target="_blank" style="color:#ffffff; text-decoration: none; font-size: 14px;">
+                                                    <b>Phone:</b> 0800 612 2666
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- RIGHT COLUMN -->
+                        <table cellpadding="0" cellspacing="0" border="0" width="36%" style="width: 36%;" align="right" class="column-footer last">
+                            <tr>
+                                <td style="padding: 0 0 10px 0;">
+                                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                        <tr>
+                                            <td align="left" style="font-family: Arial, sans-serif; color: #ffffff; font-size: 18px; padding-bottom: 20px;">Connect to us</td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left" style="font-family: Arial, sans-serif; color: #666666; font-size: 16px;">
+                                                <a href="https://twitter.com/rainbirdai" target="_blank" style="color: #262627;padding-right: 10px;">
+                                                    <img alt="twitter" src="{{ app.request.uriForPath(asset('images/twitter.png')) }}" width="23" height="23" style="display: inline; font-family: Arial, sans-serif; color: #ffffff;" border="0">
+                                                </a>
+                                                <a href="https://www.facebook.com/RainBirdAI" target="_blank" style="color: #262627; padding-right: 10px;">
+                                                    <img alt="facebook" src="{{ app.request.uriForPath(asset('images/facebook.png')) }}" width="23" height="23" style="display: inline; font-family: Arial, sans-serif; color: #ffffff;" border="0">
+                                                </a>
+                                                <a href="https://www.linkedin.com/company/rainbird-technologies-ltd" target="_blank" style="color: #262627;padding-right: 10px;">
+                                                    <img alt="google" src="{{ app.request.uriForPath(asset('images/linkedin.png')) }}" width="23" height="23" style="display: inline; font-family: Arial, sans-serif; color: #ffffff;" border="0">
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <!--[if (gte mso 9)|(IE)]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+        </td>
+    </tr>
+    <tr>
+        <td bgcolor="#44217a" align="left" style="padding: 20px;">
+            <!--[if (gte mso 9)|(IE)]>
+            <table align="center" border="0" cellspacing="0" cellpadding="0" width="600">
+                <tr>
+                    <td align="center" valign="top" width="600">
+            <![endif]-->
+            <!-- UNSUBSCRIBE COPY -->
+            <table cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 800px; line-height: 18px;" align="center" class="responsive-table">
+                <tr>
+                    <td valign="top" class="mobile-wrapper">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%" style="width: 100%;" align="right">
+                            <tr>
+                                <td style="padding: 0 0 10px 0;">
+                                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                        <tr>
+                                            <td align="right" style="font-family: Arial, sans-serif; color: #ffffff; font-size: 16px;"><a href="https://rainbird.ai" target="_blank" style="color: #ffffff; text-decoration: none;">&copy; Rainbird
+                                                    Technologies Ltd. All rights reserved</a></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <!--[if (gte mso 9)|(IE)]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+        </td>
+    </tr>
+</table>
+</body>
+</html>
