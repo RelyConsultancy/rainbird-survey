@@ -346,6 +346,10 @@ header .logo-matter {
         list-style: none;
     }
 
+    .choices li {
+        padding-bottom: 5px;
+    }
+
 
     /* BOT CHAT SCREEN */
 
@@ -367,10 +371,14 @@ header .logo-matter {
     .bot-screen .survey {
         float: left;
         width: 150px;
-        height: 328px;
-        padding: 80px 20px 0 45px;
+        height: 338px;
+        padding: 70px 20px 0 45px;
         background-image: url('../images/phone.png');
         background-repeat: no-repeat;
+    }
+
+    .bot-screen .survey form#data {
+        margin-bottom: 5px;
     }
 
     .bot-screen .survey h3 {
@@ -382,7 +390,7 @@ header .logo-matter {
     }
 
     .bot-screen .choices {
-        font-size: .6875rem;
+        font-size: .6500rem;
         margin: 0;
         padding: 0;
         list-style: none;
@@ -464,15 +472,15 @@ header .logo-matter {
 
     /* LAPTOP SCREEN */
     .laptop-screen .section-wrapper {
-        max-width: 980px;
-        min-height: 381px;
+        max-width: 1040px;
+        min-height: 420px;
         background-image: url('../images/laptop.png');
         background-repeat: no-repeat;
     }
 
     .laptop-screen .info {
         float: right;
-        width: 470px;
+        width: 440px;
     }
 
     .laptop-screen .info h2 {
@@ -488,11 +496,47 @@ header .logo-matter {
 
     .laptop-screen .survey {
         float: left;
-        width: 270px;
-        height: 158px;
-        margin: 100px 0 0 200px;
-        padding: 10px;
-        background: #fff;
-        border: 1px solid #ccc;
+        width: 300px;
+        height: 176px;
+        margin: 168px 0 0 260px;
+        padding: 0 10px;
+        background: none;
+    }
+
+    .laptop-screen .survey form#data {
+        margin: 0;
+    }
+
+    .laptop-screen .choices {
+        font-size: .6875rem;
+    }
+
+    .laptop-screen .choices li {
+        background-color: #dec;
+        padding: 2px 5px;
+        margin: 0 10px 5px 0;
+        border-radius: 5px;
+    }
+
+    .laptop-screen .choices li input {
+        margin: 0;
+        padding: 0;
+        opacity: 0;
+        display: none;
+        float: none;
+    }
+
+    .laptop-screen .choices li.answer {
+        background-color: #bca;
+        border-radius: 5px 5px 5px 0;
+    }
+
+    .laptop-screen .survey h3 {
+        background: #ccc;
+        border-radius: 5px 5px 0 5px;
+        padding: 2px 5px;
+        margin-left: 15px;
+        line-height: 14px;
+        margin-bottom: 5px;
     }
 }
